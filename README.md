@@ -38,3 +38,11 @@ rover's camera produces.
 
 ![image](https://user-images.githubusercontent.com/88388782/206856298-4b364c6c-248e-4b90-84fa-b054d9ac2d3b.png)
 
+## How To Run The Code
+1. Download Simulator [Linux](https://s3-us-west-1.amazonaws.com/udacity-robotics/Rover+Unity+Sims/Linux_Roversim.zip)
+2. Clone The Repo 
+3. Create A new Environment 
+4. Download Dependencies [RoboND-Python-Starterkit](https://github.com/ryan-keenan/RoboND-Python-Starterkit)
+5. Run drive_rover.py File
+6. open the simulator and **Select Autonomous Mode**
+7. Enjoy! 😉
