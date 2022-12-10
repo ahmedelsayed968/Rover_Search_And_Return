@@ -97,7 +97,21 @@ def perception_step(Rover):
     # TODO: 
     # NOTE: camera image is coming to you in Rover.img
     # 1) Define source and destination points for perspective transform
+    image=Rover.img
+    dst = 3
+    bottom_offset = 5
+    source = np.float32([[14, 140],
+                     [300, 140],
+                     [200, 95],
+                     [120, 95]])
+
+    destination = np.float32([[image.shape[1] / 2 - dst, image.shape[0] - bottom_offset],
+                          [image.shape[1] / 2 + dst, image.shape[0] - bottom_offset],
+                          [img.shape[1] / 2 + dst, image.shape[0] - 2*dst - bottom_offset],
+                          [img.shape[1] / 2 - dst, image.shape[0] - 2*dst - bottom_offset]])
+
     # 2) Apply perspective transform
+    warped, mask = perspect_transform(rock_img, source, destination)
     # 3) Apply color threshold to identify navigable terrain/obstacles/rock samples
     threshed = find_navigable(warped)
     obs_map = np.absolute(np.float32(threshed)-1)*mask
