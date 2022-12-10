@@ -1,6 +1,32 @@
 import numpy as np
 import cv2
 
+# Define a function to perform a perspective transform
+# I've used the example grid image above to choose source points for the
+# grid cell in front of the rover (each grid cell is 1 square meter in the sim)
+# Define a function to perform a perspective transform
+def perspect_transform(img, src, dst):
+    M = cv2.getPerspectiveTransform(src, dst)
+    warped = cv2.warpPerspective(img, M, (img.shape[1], img.shape[0]))
+    
+    return warped
+
+dst = 3
+bottom_offset = 5
+source = np.float32([[14, 140],
+                     [300, 140],
+                     [200, 95],
+                     [120, 95]])
+
+destination = np.float32([[image.shape[1] / 2 - dst, image.shape[0] - bottom_offset],
+                          [image.shape[1] / 2 + dst, image.shape[0] - bottom_offset],
+                          [img.shape[1] / 2 + dst, image.shape[0] - 2*dst - bottom_offset],
+                          [img.shape[1] / 2 - dst, image.shape[0] - 2*dst - bottom_offset]])
+
+
+warped = perspect_transform(rock_img, source, destination)
+plt.imshow(warped)
+#scipy.misc.imsave('../output/warped_example.jpg', warped)
 # Identify pixels above the threshold
 # Threshold of RGB > 160 does a nice job of identifying ground pixels only
 def find_navigable(img, rgb_thresh=(150, 150, 150)):
