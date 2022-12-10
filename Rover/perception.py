@@ -12,25 +12,7 @@ def perspect_transform(img, src, dst):
     
     return warped,mask
 
-dst = 3
-bottom_offset = 5
-source = np.float32([[14, 140],
-                     [300, 140],
-                     [200, 95],
-                     [120, 95]])
 
-destination = np.float32([[image.shape[1] / 2 - dst, image.shape[0] - bottom_offset],
-                          [image.shape[1] / 2 + dst, image.shape[0] - bottom_offset],
-                          [img.shape[1] / 2 + dst, image.shape[0] - 2*dst - bottom_offset],
-                          [img.shape[1] / 2 - dst, image.shape[0] - 2*dst - bottom_offset]])
-
-
-warped, mask = perspect_transform(rock_img, source, destination)
-fig=plt.figure(figsize=(12,3))
-plt.subplot(121)
-plt.imshow(warped)
-plt.subplot(122)
-plt.imshow(mask,cmap='gray')
 #scipy.misc.imsave('../output/warped_example.jpg', warped)
 # Identify pixels above the threshold
 # Threshold of RGB > 160 does a nice job of identifying ground pixels only
