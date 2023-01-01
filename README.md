@@ -32,11 +32,20 @@ rover's camera produces.
 ## Project Walkthrough  
 <a href="https://www.youtube.com/watch?v=KgOsW1BRLDo">Project WalkThrough Video </a>
 
-## Results:
+## Phase I Results:
 
 [Demo](https://drive.google.com/file/d/17WQwoDwrEGJ0lwJeK-VyCjucjPP-Kiec/view)
 
 ![image](https://user-images.githubusercontent.com/88388782/206856298-4b364c6c-248e-4b90-84fa-b054d9ac2d3b.png)
+
+## Phase II Requirements:
+
+1. map at least 95% of the environment at 85% fidelity
+
+2. locate and pick up at least five rocks out of the six, and then return them back to the start position
+
+## Phase II Results:
+![image](https://user-images.githubusercontent.com/88388782/210163298-8130bc06-973a-428c-8119-b996f0132119.png)
 
 ## Contributers:
 <table>
