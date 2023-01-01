@@ -53,7 +53,7 @@ def update_rover(Rover, data):
     # Picking up flag
     Rover.picking_up = np.int64(data["picking_up"])
     # Update number of rocks collected
-    Rover.samples_collected = Rover.samples_to_find - np.int64(data["sample_count"])
+    Rover.samples_collected = 6- np.int64(data["sample_count"])
 
     print('speed =', Rover.vel, 'position =', Rover.pos, 'throttle =',
           Rover.throttle, 'steer_angle =', Rover.steer, 'near_sample:', Rover.near_sample,
