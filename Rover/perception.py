@@ -249,14 +249,5 @@ def perception_step(Rover):
     Rover.samples_dists = dist
     Rover.samples_angles = angles
 
-    # To return to starting position
-
-    if Rover.perc_mapped >= 92 and Rover.samples_collected == 5:
-        if (abs(Rover.pos[0] - Rover.initial_x) <= 50 & abs(Rover.pos[1] - Rover.initial_y) <= 50):
-            Rover.mode.append('stop')
-            Rover.throttle = 0
-            Rover.brake = 20
-
-        else:
-            Rover.mode.append('forward')
+    
     return Rover
