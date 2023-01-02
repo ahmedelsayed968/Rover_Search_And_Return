@@ -62,6 +62,12 @@ def decision_step(Rover):
                 Rover.brake = Rover.brake_set
                 Rover.steer = 0
                 Rover.mode.append('stop')
+            if Rover.perc_mapped >= 95 and Rover.samples_collected >= 5:
+                if (abs(Rover.pos[0] - Rover.initial_x) <= 5 and abs(Rover.pos[1] - Rover.initial_y) <= 5):
+                    Rover.mode.append('stop')
+                    Rover.throttle = 0
+                    Rover.brake = 18
+                    Rover.mode ='end'
 
             # If we're already in "stuck". Stay here for 1 sec
         elif Rover.mode[-1] == 'stuck':
