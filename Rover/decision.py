@@ -153,7 +153,7 @@ def decision_step(Rover):
                     Rover.mode.pop()  # returns to previous mode
         elif Rover.mode[-1] == 'end':
             Rover.throttle = 0
-            Rover.beake =20
+            Rover.brake =20
 
     # Just to make the rover do something
     # even if no modifications have been made to the code
