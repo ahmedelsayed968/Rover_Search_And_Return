@@ -66,8 +66,6 @@ def decision_step(Rover):
             # To return to starting position
             if Rover.perc_mapped >= 92 and Rover.samples_collected >= 5:
                 if (abs(Rover.pos[0] - Rover.initial_x) <= 5 and abs(Rover.pos[1] - Rover.initial_y) <= 5):
-                    Rover.throttle = 0 
-                    Rover.beake =20
                     Rover.mode.append('end')
 
             # If we're already in "stuck". Stay here for 1 sec
@@ -153,7 +151,7 @@ def decision_step(Rover):
                     Rover.mode.pop()  # returns to previous mode
         elif Rover.mode[-1] == 'end':
             Rover.throttle = 0
-            Rover.brake =20
+            Rover.brake = 18
 
     # Just to make the rover do something
     # even if no modifications have been made to the code
